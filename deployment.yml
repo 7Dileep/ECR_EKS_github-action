@@ -1,23 +1,23 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: git-deployment
+  name: dileep-deployment
   labels: 
-     app: git
+     app: regapp
 
 spec:
   replicas: 2 
   selector:
     matchLabels:
-      app: git
+      app: regapp
 
   template:
     metadata:
       labels:
-        app: git
+        app: regapp
     spec:
       containers:
-      - name: git
+      - name: regapp
         image: 484907495344.dkr.ecr.ap-south-1.amazonaws.com/default:github.sha
         imagePullPolicy: Always
         ports:
