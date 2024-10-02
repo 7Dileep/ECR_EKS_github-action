@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: git-deployment
+
+spec:
+
+  replicas: 2
+
+  selector:
+
+    matchLabels:
+
+      app: nginx
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: nginx
+
+    spec:
+
+      containers:
+
+      - name: nginx
+
+        image: 484907495344.dkr.ecr.ap-south-1.amazonaws.com/default:github.sha
+
+        ports:
+
+        - containerPort: 80
